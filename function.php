@@ -37,7 +37,8 @@ class weatherLookUp
 				'longitude' => $decode_result['places'][0]['longitude'],
 				'latitude' => $decode_result['places'][0]['latitude'],
 				'place_name' => $decode_result['places'][0]['place name'],
-				'state' => $decode_result['places'][0]['state']
+				'state' => $decode_result['places'][0]['state'],
+				'abbreviation' => $decode_result['country abbreviation'],
 			];
 		return $data;
 		} catch (\Exception $e) {
@@ -96,7 +97,8 @@ if (isset($_POST['postal_code'])) {
 				'longitude' => $city['longitude'],
 				'latitude' => $city['latitude'],
 				'place' => $city['place_name'],
-				'state' => $city['state']
+				'state' => $city['state'],
+				'country_code' => $city['abbreviation']
 			];
 			$weather = $callweather->getWeather($data);
 			$weather_newest = json_decode($weather);

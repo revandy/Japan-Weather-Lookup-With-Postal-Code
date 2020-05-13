@@ -27,6 +27,7 @@
 		  	console.log('long',data[0].detail.longitude)
 		  	console.log('lat',data[0].detail.latitude)
 		  	$('.loading').hide()
+		  	$('#flag').attr('src', 'https://www.countryflags.io/'+data[0].detail.country_code+'/shiny/64.png')
 		  },
 		  error: function(response){
 		  	alert(response.responseText)
