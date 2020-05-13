@@ -46,28 +46,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASru7_maCZXu7MpXtukjWWV6JbnTbPnPM&callback=initMap" async defer></script>
 <script src="js/main.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	$.ajax({
-	  url: "http://ip-api.com/json",
-	  success: function(response){
-	  	console.log(response)
-	  	initMap(parseFloat(response.lat), parseFloat(response.lon))
-	  	$('#imgMap').remove()
-	  	$('#postal_code').val(response.zip)
-	  	$('#flag').attr('src', 'https://www.countryflags.io/'+response.countryCode+'/shiny/64.png');
-	  	$('.ip').text("IP: "+response.query)
-	  	$('.country').text("Country: "+response.country)
-	  	$('.city').text("City: "+response.city)
-	  	$('.lat').text("LAT: "+response.lat)
-	  	$('.lon').text("LNG: "+response.lon)
-	  	$('.isp').text("ISP: "+response.isp)
-	  	$('#location').text(response.city);
-	  	processLookUp()
-	  },
-	});
-})
-</script>
 </body>
 </html>
 

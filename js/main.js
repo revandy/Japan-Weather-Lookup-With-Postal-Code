@@ -45,4 +45,23 @@ function initMap(lat = 35.6915, lng = 139.7081) {
     zoom: 20
   });
 }
-// on load finished
+$(document).ready(function(){
+	$.ajax({
+	  url: "http://ip-api.com/json",
+	  success: function(response){
+	  	console.log(response)
+	  	initMap(parseFloat(response.lat), parseFloat(response.lon))
+	  	$('#imgMap').remove()
+	  	$('#postal_code').val(response.zip)
+	  	$('#flag').attr('src', 'https://www.countryflags.io/'+response.countryCode+'/shiny/64.png');
+	  	$('.ip').text("IP: "+response.query)
+	  	$('.country').text("Country: "+response.country)
+	  	$('.city').text("City: "+response.city)
+	  	$('.lat').text("LAT: "+response.lat)
+	  	$('.lon').text("LNG: "+response.lon)
+	  	$('.isp').text("ISP: "+response.isp)
+	  	$('#location').text(response.city);
+	  	processLookUp()
+	  },
+	});
+})
