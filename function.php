@@ -87,13 +87,17 @@ if (isset($_POST['postal_code'])) {
 		$decode_woe = json_decode($woe_id);
 		$woe_id_number = $decode_woe[0]->woeid;
 		$data_weather = [];
+		$year = date('Y');
+			$month = date('m');
+			$day = date('d');
+			$day_name = date('D');
 		for ($i=0; $i <= 2; $i++) { 
 			$data = [
 				'woe_id' => $woe_id_number,
-				'year' => date('Y'),
-				'month' => date('m'),
-				'day' => date('d')+$i,
-				'dmy' => date('Y-m-d D'),
+				'year' => $year,
+				'month' => $month,
+				'day' => $day+$i,
+				'dmy' => $year.'-'.$month.'-'. $day++ .' '.$day_name,
 				'longitude' => $city['longitude'],
 				'latitude' => $city['latitude'],
 				'place' => $city['place_name'],

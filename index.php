@@ -29,6 +29,7 @@
 			    <img id="imgMap" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcG6O0Qzvu-LtC6YSCX0Kf3Ka62_m5AzVaPdRwk3tHujnoLT59&usqp=CAU" class="card-img-top" alt="...">
 			  </div>
 			   <div class="card">
+			   	<h5 class="text-center">Your Location</h5>
 			    <img id="flag" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcG6O0Qzvu-LtC6YSCX0Kf3Ka62_m5AzVaPdRwk3tHujnoLT59&usqp=CAU" class="card-img-top" alt="...">
 			    <div class="form-group">
 			    	<p class="text-center ip"></p>
@@ -37,6 +38,7 @@
 			    	<p class="text-center lat"></p>
 			    	<p class="text-center lon"></p>
 			    	<p class="text-center isp"></p>
+			    	<center><button onclick="refreshLocation()" class="btn btn-warning">LOOKUP MY LOCATION WEATHER</button></center>
 			    </div>
 			  </div>
 		</div>

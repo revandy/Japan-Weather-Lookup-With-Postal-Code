@@ -35,9 +35,10 @@
 		  	$('.loading').hide()
 		  }
 		});
-
 	}
-
+	function refreshLocation(){
+		location.reload()
+	}
 var map;
 function initMap(lat = 35.6915, lng = 139.7081) {
   map = new google.maps.Map(document.getElementById('map'), {
